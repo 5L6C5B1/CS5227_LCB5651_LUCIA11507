@@ -23,5 +23,9 @@ namespace OFOrder_LUCIA11507.Models
         public long CategoryID { get; set; }
         public Category Category { get; set; }
         public string Image { get; set; }
+
+        [NotMapped]
+        [FileExtension]
+        public IFormFile ImageUpload { get; set; }
     }
 }
