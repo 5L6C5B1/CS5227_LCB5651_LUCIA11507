@@ -32,6 +32,10 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
+    name: "Areas",
+    pattern: "{area:exists}/{controller=FoodItems}/{action=Shop}/{id?}");
+
+app.MapControllerRoute(
     name: "fooditems",
     pattern: "/fooditems/{categorySlug?}",
     defaults: new { controller = "FoodItems", action = "Shop" });
