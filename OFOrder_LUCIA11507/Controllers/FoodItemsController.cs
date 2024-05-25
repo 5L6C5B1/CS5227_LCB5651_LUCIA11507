@@ -16,7 +16,7 @@ namespace OFOrder_LUCIA11507.Controllers
 
         public async Task<IActionResult> Shop(string categorySlug = "", int p = 1)
         {
-            int pageSize = 18;
+            int pageSize = 20;
             ViewBag.PageNumber = p;
             ViewBag.PageRange = pageSize;
             ViewBag.CategorySlug = categorySlug;
