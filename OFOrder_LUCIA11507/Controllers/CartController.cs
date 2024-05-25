@@ -14,7 +14,7 @@ namespace OFOrder_LUCIA11507.Controllers
         {
             _context = context;
         }
-        public IActionResult Shop()
+        public IActionResult Cart()
         {
             List<CartItem> cart = HttpContext.Session.GetJson<List<CartItem>>("Cart") ?? new List<CartItem>();
             CartViewModel cartVM = new()
@@ -42,6 +42,58 @@ namespace OFOrder_LUCIA11507.Controllers
             HttpContext.Session.SetJson("Cart", cart);
             TempData["Success"] = "Added product to cart.";
             return Redirect(Request.Headers["Referer"].ToString());
+        }
+
+        public async Task<IActionResult> Remove(long id)
+        {
+            List<CartItem> cart = HttpContext.Session.GetJson<List<CartItem>>("Cart");
+
+            CartItem cartitem = cart.Where(c => c.FoodItemID == id).FirstOrDefault();
+
+            if (cartitem.Quantity > 1)
+            {
+                --cartitem.Quantity;
+            }
+            else
+            {
+                cart.RemoveAll(p => p.FoodItemID == id);
+            }
+
+            if (cart.Count == 0)
+            {
+                HttpContext.Session.Remove("Cart");
+            }
+            else
+            {
+                HttpContext.Session.SetJson("Cart", cart);
+            }
+
+            TempData["Success"] = "Removed item from cart.";
+
+            return RedirectToAction("Cart");
+        }
+
+        public async Task<IActionResult> Delete(long id)
+        {
+            List<CartItem> cart = HttpContext.Session.GetJson<List<CartItem>>("Cart");
+            cart.RemoveAll(p => p.FoodItemID == id);
+            if (cart.Count == 0)
+            {
+                HttpContext.Session.Remove("Cart");
+            }
+            else
+            {
+                HttpContext.Session.SetJson("Cart", cart);
+            }
+
+            TempData["Succes"] = "Removed item from cart.";
+            return RedirectToAction("Cart");
+        }
+
+        public IActionResult Clear()
+        {
+            HttpContext.Session.Remove("Cart");
+            return RedirectToAction("Cart");
         }
     }
 }
