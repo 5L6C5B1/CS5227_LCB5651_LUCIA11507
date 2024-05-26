@@ -4,10 +4,10 @@
     ViewData["Title"] = "Shop";
 }
 
-<h1>Shop</h1>
+<h1>Items</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Create New Item</a>
 </p>
 <table class="table">
     <thead>
@@ -32,11 +32,10 @@
                 @item.Category.Name
             </td>
             <td>
-                <img src="/media/fooditems/@item.Image" width="100" alt="">
+                <img src="/media/fooditems/@item.Image" id="img-shop" alt="">
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.ID" class="confirmDeletion">Delete</a>
             </td>
         </tr>
@@ -51,3 +50,5 @@
                 page-range="@ViewBag.PageRange">
     </pagination>
 </div>
+
+<link href="/css/edit.css" rel="stylesheet" />
