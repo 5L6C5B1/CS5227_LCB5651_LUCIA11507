@@ -1,3 +1,4 @@
+using OFOrder_LUCIA11507.Infrastructure.Validation;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
