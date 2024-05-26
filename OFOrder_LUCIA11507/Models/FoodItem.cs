@@ -22,7 +22,7 @@ namespace OFOrder_LUCIA11507.Models
         [Required, Range(1, int.MaxValue, ErrorMessage = "You must choose a category")]
         public long CategoryID { get; set; }
         public Category Category { get; set; }
-        public string Image { get; set; }
+        public string Image { get; set; } = "noimage.png";
 
         [NotMapped]
         [FileExtension]
