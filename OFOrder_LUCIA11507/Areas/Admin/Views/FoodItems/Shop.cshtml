@@ -32,7 +32,7 @@
                 @item.Category.Name
             </td>
             <td>
-                <img src="/media/fooditems/@item.Image" id="img-shop" alt="">
+                <img src="/media/fooditems/@item.Image" width="100" alt="">
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
@@ -50,5 +50,3 @@
                 page-range="@ViewBag.PageRange">
     </pagination>
 </div>
-
-<link href="/css/edit.css" rel="stylesheet" />
