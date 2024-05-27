@@ -10,8 +10,8 @@ namespace OFOrder_LUCIA11507.Controllers
         private UserManager<AppUser> _userManager;
         private SignInManager<AppUser> _signInManager;
 
-        public AccountController(SignInManager<AppUser> signInManager, UserManager<AppUser> userManager) {
-            
+        public AccountController(SignInManager<AppUser> signInManager, UserManager<AppUser> userManager)
+        {
             _userManager = userManager;
             _signInManager = signInManager;
         }
@@ -55,7 +55,7 @@ namespace OFOrder_LUCIA11507.Controllers
                     return Redirect(loginVM.ReturnUrl ?? "/");
                 }
 
-                ModelState.AddModelError("", "Invalid username or password");
+                ModelState.AddModelError("", "Invalid username or password.");
             }
 
             return View(loginVM);
@@ -67,5 +67,6 @@ namespace OFOrder_LUCIA11507.Controllers
 
             return Redirect(returnUrl);
         }
+
     }
 }
