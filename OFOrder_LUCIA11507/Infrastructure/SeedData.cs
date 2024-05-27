@@ -172,7 +172,7 @@ namespace OFOrder_LUCIA11507.Infrastructure
                     {
                         Name = "Ocean Waves",
                         Slug = "ocean waves",
-                        Description = "A tub of sea salt flavoured ice cream.",
+                        Description = "Sea salt flavoured ice cream popsicles.",
                         Price = 5.00,
                         Category = desserts,
                         Image = "icecream.jpg"
