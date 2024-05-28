@@ -6,5 +6,7 @@ namespace CS5227_LUCIA11507.Pages.Services
     {
         public AppDbContext(DbContextOptions options) : base(options) { }
 
+        public DbSet<FoodItem> FoodItems { get; set; }
+
     }
 }
