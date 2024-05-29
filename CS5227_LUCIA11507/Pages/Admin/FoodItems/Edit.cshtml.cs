@@ -49,7 +49,7 @@ namespace CS5227_LUCIA11507.Pages.Admin.FoodItems
         {
             if (id == null)
             {
-                Response.Redirect("Admin/FoodItems/Items");
+                Response.Redirect("/Admin/FoodItems/Items");
                 return;
             }
 
@@ -62,7 +62,7 @@ namespace CS5227_LUCIA11507.Pages.Admin.FoodItems
             var foodItem = context.FoodItems.Find(id);
             if (foodItem == null)
             {
-                Response.Redirect("Admin/FoodItems/Items");
+                Response.Redirect("/Admin/FoodItems/Items");
                 return;
             }
 
@@ -92,7 +92,7 @@ namespace CS5227_LUCIA11507.Pages.Admin.FoodItems
             FoodItem = foodItem;
             successMessage = "Item successfully updated.";
 
-            Response.Redirect("Admin/FoodItems/Items");
+            Response.Redirect("/Admin/FoodItems/Items");
         }
     }
 }
