@@ -33,7 +33,7 @@ namespace CS5227_LUCIA11507.Pages.Admin.FoodItems
             }
 
             // if none of the fields are filled, display message
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 errorMessage = "Please provide all the required fields.";
                 return;
