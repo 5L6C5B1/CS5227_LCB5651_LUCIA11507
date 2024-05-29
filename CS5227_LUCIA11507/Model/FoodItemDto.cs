@@ -12,7 +12,6 @@ namespace CS5227_LUCIA11507.Model
         [Required]
         public decimal Price { get; set; }
         public string? Description { get; set; }
-        [MaxLength(100)]
         public IFormFile? ImageFile { get; set; }
     }
 }
