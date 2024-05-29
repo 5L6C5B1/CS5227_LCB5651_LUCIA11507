@@ -129,7 +129,7 @@ namespace CS5227_LUCIA11507.Areas.Identity.Pages.Account
                  {
                      FirstName = Input.Forename,
                      LastName = Input.Surname,
-                     UserName = Input.Email,
+                     UserName = Input.Forename + Input.Surname,
                      Email = Input.Email,
                      PhoneNumber = Input.PhoneNumber,
                      Address = Input.Address,
