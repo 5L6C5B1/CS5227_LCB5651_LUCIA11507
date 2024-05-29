@@ -1,0 +1,99 @@
+﻿@page
+@model CS5227_LUCIA11507.Pages.Admin.FoodItems.EditModel
+@{
+}
+<div class="row">
+    <div class="col-md-8 mx-auto rounded border p-3">
+        <h2 class="text-center mb-5">Edit Item</h2>
+
+        @if (Model.errorMessage.Length > 0)
+        {
+            <div class="alert alert-warning alert-dismissable fade show" role="alert">
+                <strong>@Model.errorMessage</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+        else if (Model.successMessage.Length > 0)
+        {
+            <div class="alert alert-success alert-dismissable fade show" role="alert">
+                <strong>@Model.successMessage</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+
+        <form method="post" enctype="multipart/form-data">
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">ID</label>
+                <div class="col-sm-8">
+                    <input class="form-control-plaintext" value="@Model.FoodItem.ID" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Name</label>
+                <div class="col-sm-8">
+                    <input class="form-control" asp-for="FoodItemDto.Name" />
+                    <span asp-validation-for="FoodItemDto.Name" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Category</label>
+                <div class="col-sm-8">
+                    <select class="form-select" asp-for="FoodItemDto.Category">
+                        <option value="Food">Food</option>
+                        <option value="Drinks">Drinks</option>
+                        <option value="Desserts">Desserts</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Price</label>
+                <div class="col-sm-8">
+                    <input class="form-control" asp-for="FoodItemDto.Price" />
+                    <span asp-validation-for="FoodItemDto.Price" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Description</label>
+                <div class="col-sm-8">
+                    <textarea class="form-control" asp-for="FoodItemDto.Description"></textarea>
+                    <span asp-validation-for="FoodItemDto.Description" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label"></label>
+                <div class="col-sm-8">
+                    <img src="/fooditems/@Model.FoodItem.ImageFileName" width="150" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Image</label>
+                <div class="col-sm-8">
+                    <input class="form-control" asp-for="FoodItemDto.ImageFile" />
+                    <span asp-validation-for="FoodItemDto.ImageFile" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Created At</label>
+                <div class="col-sm-8">
+                    <input readonly class="form-control-plaintext" value="@Model.FoodItem.CreatedAt.ToString("MM/dd/yyyy")" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="offset-sm-4 col-sm-4 d-grid">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                <div class="col-sm-4 d-grid">
+                    <button class="btn btn-outline-primary" href="/Admin/FoodItems/Items" role="button">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
