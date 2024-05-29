@@ -1,0 +1,41 @@
+﻿@page
+@model CS5227_LUCIA11507.Pages.Admin.FoodItems.ItemsModel
+@{
+}
+<h2 class="text-center mb-5">List of Items</h2>
+
+<div class="row mb-5">
+    <div class="col">
+        <a href="/Admin/FoodItems/Create" class="btn btn-primary">Create Item</a>
+    </div>
+    <div class="col">
+
+    </div>
+</div>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Image</th>
+        <th>Created At</th>
+        <th>Action</th>
+    </tr>
+    @foreach(var foodItem in Model.FoodItems)
+    {
+        <tr>
+            <td>@foodItem.ID</td>
+            <td>@foodItem.Name</td>
+            <td>@foodItem.Category</td>
+            <td>$@foodItem.Price</td>
+            <td><img src="~/fooditems/@foodItem.ImageFileName" width="100" alt="FoodItem image" /></td>
+            <td>@foodItem.CreatedAt.ToString("MM/dd/yyyy")</td>
+            <td style="white-space:nowrap">
+                <a class="btn btn-primary btn-sm" href="/Admin/FoodItems/Edit?id=@foodItem.ID">Edit</a>
+                <a class="btn btn-danger btn-sm" href="/Admin/FoodItems/Delete?id=@foodItem.ID">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
