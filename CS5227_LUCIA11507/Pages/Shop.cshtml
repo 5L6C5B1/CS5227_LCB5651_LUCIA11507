@@ -1,0 +1,40 @@
+﻿@page
+@model CS5227_LUCIA11507.Pages.ShopModel
+@{
+    ViewData["Title"] = "Shop";
+}
+<h1>Shop Items</h1>
+
+<div class="container">
+    <main role="main" class="pb-3">
+        <div class="row">
+            <div class="col-3">
+                
+
+                <div class="bg-success mt-3 p-3 text-white">
+                    small cart
+                </div>
+            </div>
+            <div class="col">
+                @Html.Partial("_NotificationPartial")
+            </div>
+        </div>
+    </main>
+</div>
+
+<div class="row">
+    @foreach (var foodItem in Model.FoodItems)
+    {
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <img src="/fooditems/@foodItem.ImageFileName" class="card-img-top" alt="@foodItem.Name">
+                <div class="card-body">
+                    <h5 class="card-title">@foodItem.Name</h5>
+                    <p class="card-text">@foodItem.Description</p>
+                    <p class="card-text">Price: $@foodItem.Price</p>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
