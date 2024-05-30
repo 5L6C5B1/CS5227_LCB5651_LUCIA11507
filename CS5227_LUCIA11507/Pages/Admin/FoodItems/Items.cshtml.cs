@@ -1,10 +1,12 @@
 using CS5227_LUCIA11507.Model;
 using CS5227_LUCIA11507.Pages.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace CS5227_LUCIA11507.Pages.Admin.FoodItems
 {
+    [Authorize(Roles = "admin")]
     public class ItemsModel : PageModel
     {
         private readonly AppDbContext context;
