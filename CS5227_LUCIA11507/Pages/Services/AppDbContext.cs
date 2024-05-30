@@ -20,10 +20,10 @@ namespace CS5227_LUCIA11507.Pages.Services
             admin.NormalizedName = "name";
 
             var manager = new IdentityRole("manager");
-            admin.NormalizedName = "manager";
+            manager.NormalizedName = "manager";
 
             var client = new IdentityRole("client");
-            admin.NormalizedName = "client";
+            client.NormalizedName = "client";
 
             builder.Entity<IdentityRole>().HasData(admin, manager, client);
         }
