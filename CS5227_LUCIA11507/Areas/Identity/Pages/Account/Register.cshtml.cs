@@ -129,7 +129,7 @@ namespace CS5227_LUCIA11507.Areas.Identity.Pages.Account
                  {
                      FirstName = Input.Forename,
                      LastName = Input.Surname,
-                     UserName = Input.Forename + Input.Surname,
+                     UserName = Input.Email,
                      Email = Input.Email,
                      PhoneNumber = Input.PhoneNumber,
                      Address = Input.Address,
@@ -140,6 +140,8 @@ namespace CS5227_LUCIA11507.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
+
+                    await _userManager.AddToRoleAsync(user, "client");
 
                     var userId = await _userManager.GetUserIdAsync(user);
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
