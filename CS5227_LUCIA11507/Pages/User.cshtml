@@ -1,0 +1,25 @@
+﻿@page
+@model CS5227_LUCIA11507.Pages.UserModel
+@{
+}
+
+<h2 class="text-center">Account Information</h2>
+
+<div>
+    <b>First Name:</b> @Model.appUser?.FirstName
+</div>
+<div>
+    <b>Last Name:</b> @Model.appUser?.LastName
+</div>
+<div>
+    <b>Email:</b> @Model.appUser?.Email
+</div>
+<div>
+    <b>Phone:</b> @Model.appUser?.PhoneNumber
+</div>
+<div>
+    <b>Address:</b> @Model.appUser?.Address
+</div>
+<div>
+    <b>Created At:</b> @Model.appUser?.CreatedAt.ToString("MM/dd/yyyy")
+</div>
