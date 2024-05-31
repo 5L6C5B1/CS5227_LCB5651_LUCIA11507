@@ -8,11 +8,11 @@ namespace CS5227_LUCIA11507.Pages
     public class ShopModel : PageModel
     {
         private readonly AppDbContext _context;
+        public List<FoodItem> FoodItems;
         public ShopModel(AppDbContext context)
         {
             _context = context;
         }
-        public List<FoodItem> FoodItems { get; set; }
         public void OnGet()
         {
             FoodItems = _context.FoodItems.ToList();
