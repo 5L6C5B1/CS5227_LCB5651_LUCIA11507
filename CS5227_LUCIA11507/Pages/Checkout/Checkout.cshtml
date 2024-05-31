@@ -1,0 +1,39 @@
+﻿@page
+@model CS5227_LUCIA11507.Pages.Checkout.CheckoutModel
+@{
+    ViewData["Title"] = "Checkout";
+}
+<h1>Checkout</h1>
+
+<div>
+    <h2>Cart Summary</h2>
+    <ul>
+        @foreach (var item in Model.Carts)
+        {
+            <li>@item.Name - $@item.Price</li>
+        }
+    </ul>
+    <p>Total: $@Model.TotalPrice</p>
+</div>
+
+<div>
+    <h2>Billing Address</h2>
+    <form method="post">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" name="FullName" required>
+
+        <label for="address">Address</label>
+        <input type="text" id="address" name="Address" required>
+
+        <label for="city">City</label>
+        <input type="text" id="city" name="City" required>
+
+        <label for="state">State</label>
+        <input type="text" id="state" name="State" required>
+
+        <label for="zip">ZIP Code</label>
+        <input type="text" id="zip" name="ZipCode" required>
+
+        <button type="submit">Proceed to Payment</button>
+    </form>
+</div>
