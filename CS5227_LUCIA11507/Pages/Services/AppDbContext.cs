@@ -28,5 +28,6 @@ namespace CS5227_LUCIA11507.Pages.Services
             builder.Entity<IdentityRole>().HasData(admin, manager, client);
         }
         public DbSet<FoodItem> FoodItems { get; set; }
+        public DbSet<Cart> Carts { get; set; }
     }
 }
