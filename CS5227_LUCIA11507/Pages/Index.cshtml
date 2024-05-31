@@ -1,10 +1,60 @@
-﻿@page
+@page
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="containers">
+        <main>
+            <section id="summary">
+                <img src="~/logo.png" alt="Company Logo" />
+                <article id="summary-passage">
+                    <h1 class="display-4">Welcome</h1>
+                    <p>In the year 2115, Old World Delights was founded in New California, UCA.</p>
+                    <p>We provide a variety of food from the Old World before the Great War. Ranging from different cuisines and drinks, 
+                        we provide preserved food or recreations of food eaten in the Old World if you're ever feeling the Old World Blues.</p>
+                </article>
+            </section>
+            <br>
+            <hr>
+            <section id="main-bottom">
+                <h2 class="text-center"><u>WHAT WE OFFER</u></h2>
+                <article class="bottom-three">
+                    <h4>Food</h4>
+                    <p>From livestock to artificial meals and snacks, with our recovered recipes we can give your tastebuds a chance to experience
+                        the meals the world once ate before the world ended.</p>
+                    <div class="bottom-link">
+                        <p class="bottom-link-arrow"></p>
+                    </div>
+                </article>
+
+                <article class="bottom-three">
+                    <h4>Drinks</h4>
+                    <p>Mixing both flavours from the Old World and the New World, we provide drinks enjoyed by many even without the original
+                        ingredients.
+                    </p>
+                    <div class="bottom-link">
+                        <p class="bottom-link-arrow"></p>
+                    </div>
+                </article>
+
+                <article class="bottom-three">
+                    <h4>Desserts</h4>
+                    <p>The preserverance of the Old World desserts intrigued us to examine how they managed to be perfectly preserved after the blast.</p>
+                    <div class="bottom-link">
+                        <p class="bottom-link-arrow"></p>
+                    </div>
+                </article>
+
+
+            </section>
+        </main>
+    </div>
+</body>
+</html>
